@@ -20,7 +20,7 @@ Welcome to the **Tech Store Landing Page** — a responsive and user-friendly we
 
 ## 📸 Preview
 
-> ![image alt]("Screenshots/Screenshot (398).png")
+> ![Screenshot (398) Preview]("Screenshots/Screenshot (398).png")
 > ![image alt]("Screenshots/Screenshot (399).png")
 > ![image alt]("Screenshots/Screenshot (400).png")
 > ![image alt]("Screenshots/Screenshot (401).png")  
