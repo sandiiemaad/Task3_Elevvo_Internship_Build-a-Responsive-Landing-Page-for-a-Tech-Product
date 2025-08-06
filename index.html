@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Store</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --header-bg: #5f6aa0;
+            --header-text: #ffffff;
+            --button-bg: #3f446e;
+            --button-text: #ffffff;
+            --footer-bg: #5f6aa0;
+            --footer-text: #ffffff;
+            --hero-h1: #1e2a38;
+            --section-h2: #1e2a38;
+            --background-container: white;
+
+        }
+
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f5f5f5;
+            --header-bg: #121212;
+            --header-text: #ffffff;
+            --button-bg: #00bcd4;
+            --button-text: #ffffff;
+            --footer-text: #ffffff;
+            --footer-bg: #121212;
+            --hero-h1: #ffffff ;
+            --section-h2: white;
+            --background-container:#121212 ;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--header-text);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--header-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--button-bg);
+        }
+
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-switch::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 19px;
+            height: 19px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .toggle-switch.active {
+            background-color: #00bcd4;
+        }
+
+        .toggle-switch.active::before {
+            transform: translateX(25px);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-left h1 {
+            font-size: 3rem;
+            color: var(--hero-h1) ;
+        }
+
+        .hero-left p {
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0097a7;
+        }
+
+        .hero-right {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-right img {
+            max-width: 70%;
+            height: fit-content;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--section-h2);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #00bcd4;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .features, .products {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature, .product {
+            flex: 1 1 calc(33% - 20px);
+            background-color: var(--background-container);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .feature:hover, .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 40px 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero-right {
+                margin-top: 20px;
+            }
+
+            .feature, .product {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">Tech Store</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="dark-mode-toggle">
+            <div class="toggle-switch" id="darkModeSwitch"></div>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-left">
+        <h1>Welcome to Tech Store</h1>
+        <p>🖥️ Tech Store - Your Gateway to Smart Technology</p>
+        <p>Welcome to Tech Store, your trusted destination for the latest and most innovative tech gadgets. Whether you're looking for powerful laptops, cutting-edge smartphones, or must-have accessories, we've got you covered.</p>
+        <p>We believe in making technology simple, accessible, and enjoyable for everyone.</p>
+        <p>Start exploring our products and bring the future into your hands today!</p>
+
+        <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore Now</button>
+    </div>
+    <div class="hero-right">
+        <img src="https://img.freepik.com/free-vector/cashier-concept-illustration_114360-3881.jpg" alt="Paying at cashier">
+    </div>
+</section>
+
+<section class="section" id="features">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+        <div class="feature">
+            <h3>Fast Delivery</h3>
+            <p>We ensure quick delivery for all your purchases.</p>
+        </div>
+        <div class="feature">
+            <h3>Quality Products</h3>
+            <p>Only the best and original products available.</p>
+        </div>
+        <div class="feature">
+            <h3>24/7 Support</h3>
+            <p>Customer support available at all times.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="product">
+            <img src="download.jpeg" alt="Smartphone">
+            <h3>Smartphones</h3>
+            <p>Latest models with advanced features — experience the perfect blend of performance and style. Designed with a sleek body, stunning display,
+                and powerful processor, our smartphones are built for multitasking, gaming, photography, and more..</p>
+        </div>
+        <div class="product">
+            <img src="SmartLaptops.jpeg" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>Powerful machines for work and play — our laptops combine performance, portability,
+                and sleek design to meet all your needs. Whether you're working remotely, attending classes, or enjoying your favorite games,
+                we have the perfect device for you.</p>
+        </div>
+        <div class="product">
+            <img src="My%20phone%20&%20Accessories.jpeg" alt="Accessories">
+            <h3>Accessories</h3>
+            <p>All the tech accessories you need in one place from stylish cases to high-performance headphones, we offer a wide range of must-have gadgets to complement your devices.
+
+                <br>-Chargers, cables, and adapters
+                <br>-Wireless earbuds and headphones
+                <br>-Laptop bags and phone cases
+                <br>-Smartwatches and fitness bands
+                <br>-Gaming and productivity tools</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: support@techstore.com</p>
+    <p>Phone: +1 (800) 123-4567</p>
+    <p>&copy; 2025 Tech Store. All rights reserved.</p>
+</footer>
+
+<script>
+    const switchBtn = document.getElementById('darkModeSwitch');
+    const body = document.body;
+
+    // Check localStorage on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        switchBtn.classList.add('active');
+    }
+
+    switchBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        switchBtn.classList.toggle('active');
+
+        // Update localStorage
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
+
+</body>
+
+</html>
