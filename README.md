@@ -1,2 +1,25 @@
-# Task3_Elevvo_Internship_Build-a-Responsive-Landing-Page-for-a-Tech-Product
-Tech Store is a modern, responsive landing page built for showcasing the latest in consumer technology. Designed with a sleek layout and intuitive interface, the page highlights a wide range of products including smartphones, laptops, and accessories.With a built-in dark mode toggle (using localStorage to remember user preferences)
+# 🛒 Tech Store Landing Page
+
+Welcome to the **Tech Store Landing Page** — a responsive and user-friendly website designed for showcasing the latest technology products, including smartphones, laptops, and accessories.
+
+## 🔥 Features
+
+- ✅ Modern and clean responsive design
+- 🌙 Dark Mode toggle with localStorage (remembers user preference)
+- 📱 Product cards with images and detailed descriptions
+- 💻 Sections for Smartphones, Laptops, and Accessories
+- 🖼️ Stylish layout with cartoon imagery and clean typography
+
+## 💡 Tech Used
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)  
+- LocalStorage for dark mode preference  
+- Responsive layout using Flexbox & media queries
+
+## 📸 Preview
+
+![screenshot]("C:\Users\User\Pictures\Screenshots\Screenshot (395).png")  
+
+
