@@ -20,6 +20,6 @@ Welcome to the **Tech Store Landing Page** — a responsive and user-friendly we
 
 ## 📸 Preview
 
-![screenshot]("C:\Users\User\Pictures\Screenshots\Screenshot (395).png")  
+![screenshot]("https://github.com/sandiiemaad/Task3_Elevvo_Internship_Build-a-Responsive-Landing-Page-for-a-Tech-Product/blob/e7f7093f97ddd8e2fc037cc2af7e5c81b43cfce9/Screenshots/Screenshot%20(398).png")  
 
 
